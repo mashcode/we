@@ -1,275 +1,912 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
-      
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
-      
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
-      
-      
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
-      
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
+<!doctype html>  
 
-      #footer {
-        clear: both;
-      }
-      
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
 
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>The United States Constitution</title>
+  <meta name="description" content="United States Constitution mobile web app">
+  <meta name="keywords" content="United States Constitution, Bill of Rights, Declaration of Independence mobile, we, app">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+
+  <!--[if lt IE 9]>
+   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 
 
-      #header {
-        background-image: url("images/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
-      
-      
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-      
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -11px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-      
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-      
-      
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-      
-      
-      #search {
-        margin: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        font-size: 11px;
-      }
-      #search input {
-        font-size: 11px;
-        margin: 2px;
-      }
-      #search-text {width: 170px}
-      
-      
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-      
-    </style>
-    <script type="text/javascript" src="javascripts/prototype.js"></script>
-    <script type="text/javascript" src="javascripts/effects.js"></script>
-    <script type="text/javascript">
-      function about() {
-        if (Element.empty('about-content')) {
-          new Ajax.Updater('about-content', 'rails/info/properties', {
-            method:     'get',
-            onFailure:  function() {Element.classNames('about-content').add('failure')},
-            onComplete: function() {new Effect.BlindDown('about-content', {duration: 0.25})}
-          });
-        } else {
-          new Effect[Element.visible('about-content') ? 
-            'BlindUp' : 'BlindDown']('about-content', {duration: 0.25});
-        }
-      }
-      
-      window.onload = function() {
-        $('search-text').value = '';
-        $('search').onsubmit = function() {
-          $('search-text').value = 'site:rubyonrails.org ' + $F('search-text');
-        }
-      }
-    </script>
-  </head>
-  <body>
-    <div id="page">
-      <!--div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <form id="search" action="http://www.google.com/search" method="get">
-              <input type="hidden" name="hl" value="en" />
-              <input type="text" id="search-text" name="q" value="site:rubyonrails.org " />
-              <input type="submit" value="Search" /> the Rails site
-            </form>
-          </li>
+  <!-- CSS : implied media="all" -->
+	<link rel="stylesheet" href="./css/style.css?v=2">
+	<!--link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" /-->
+	<style type="text/css" media="screen">@import "./css/jqtouch.css";</style> 
+	<style type="text/css" media="screen">@import "./themes/uscon/theme.css";</style> 
+	<!--link rel="stylesheet" href="css/less-framew.css"-->
+
+	<!-- Uncomment if you are specifically targeting less enabled mobile browsers
+	<link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+
+  <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./js/jquery-1.3.2.js"%3E%3C/script%3E'))</script-->
+  <!--script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script-->
+  <script type="text/javascript" src="./js/jquery.1.3.2.min.js"></script>
+  <script type="text/javascript" src="./js/jqtouch.js"></script>
+  <!--script src="./js/jqtouch.transitions.js"></script-->
+  <!--This initializes jQTouch -->
+  <script type="text/javascript">
+  	var jqt = new $.jQTouch(); 
+  </script>
+  <!-- scripts concatenated and minified via ant build script-->
+  <!-- phonegap -->
+  <script type="text/javascript" src="phonegap.js"></script>
+  <!-- end phonegap -->
+
+  <!--script src="js/plugins.js"></script>
+  <script src="js/script.js"></script-->
+ 
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.6.min.js"></script>
+
+</head>
+
+<body onLoad="onLoad()">
+
+	<div id="home" class="current"> 
+		<div class="toolbar"> 
+			<h1>We</h1> 
+			<!--a href="#about" class="button pop">About</a--> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+		</div>
+        <div class="" style="height:100%;width:100%;font-family: Courier;font-size:14px;font-weight:bold;margin:2% 0 0 2%;text-align:center;">
+        <div class="" style="float:left;width:150px;height:150px;margin:0 2% 2% 0"> 
+			<a href="#di" class="flip"><img src="images/home-tj.png" width="150" height="150" alt="Declaration of Independence" title="Declaration of Independence" border="0"></a>
+		</div> 
+        <div class="" style="float:left;width:150px;height:150px;margin:0 2% 2% 0"> 
+			<a href="#articles" class="flip"><img src="images/home-us.png" width="150" height="150" alt="The Constitution" title="The Constitution" border="0"></a>
+		</div> 
+        <div class="" style="float:left;width:150px;height:150px;margin:0 2% 0% 0"> 
+			<a href="#rights" class="flip"><img src="images/home-we.png" width="150" height="150" alt="Amendments" title="Amendments" border="0"></a>
+		</div>
+        <div class="" style="float:left;width:150px;height:110px;background:rgb(68,68,68);color:#fff;font-sixe:20pt;padding-top:40px;"> 
+			<a href="#about" class="pop" style="color:#fff;text-decoration:none;">About</a>
+		</div>
+        <div style="clear:both"></div>
+		</div>
+        <!--ul class="individual"> 
+			<li class=""><a href="#we">We</a></li> 
+			<li class=""><a href="" target="_blank">Email</a></li> 
+		</ul> 
         
-          <li>
-            <h3>Join the community</h3>
-            <ul class="links">
-              <li><a href="http://www.rubyonrails.org/">Ruby on Rails</a></li>
-              <li><a href="http://weblog.rubyonrails.org/">Official weblog</a></li>
-              <li><a href="http://wiki.rubyonrails.org/">Wiki</a></li>
-            </ul>
-          </li>
-          
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://stdlib.rubyonrails.org/">Ruby standard library</a></li>
-              <li><a href="http://corelib.rubyonrails.org/">Ruby core</a></li>
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div-->
+		<div class="info"> 
+		</div--> 
+	</div> 
 
-      <div id="content">
-        <div id="header">
-          <h1>We</h1>
-          <h2></h2>
-        </div>
+	<div id="di">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Declaration of Independence</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<!--a href="#about" class="button pop">About</a--> 
+		</div> 
+		<div class="content">
+<h3>IN CONGRESS, July 4, 1776.</h3>
+		<div class="section">
+<p><strong>The unanimous Declaration of the thirteen United States of America,</strong></strong> 
+<p>When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.</p> 
+<p>We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.--Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.</p> 
+<blockquote> 
+	<p>He has refused his Assent to Laws, the most wholesome and necessary for the public good.<br> 
+		He has forbidden his Governors to pass Laws of immediate and pressing importance, unless suspended in their operation till his Assent should be obtained; and when so suspended, he has utterly neglected to attend to them.<br> 
+		He has refused to pass other Laws for the accommodation of large districts of people, unless those people would relinquish the right of Representation in the Legislature, a right inestimable to them and formidable to tyrants only. <br> 
+		He has called together legislative bodies at places unusual, uncomfortable, and distant from the depository of their public Records, for the sole purpose of fatiguing them into compliance with his measures. <br> 
+		He has dissolved Representative Houses repeatedly, for opposing with manly firmness his invasions on the rights of the people.<br> 
+		He has refused for a long time, after such dissolutions, to cause others to be elected; whereby the Legislative powers, incapable of Annihilation, have returned to the People at large for their exercise; the State remaining in the mean time exposed to all the dangers of invasion from without, and convulsions within.<br> 
+		He has endeavoured to prevent the population of these States; for that purpose obstructing the Laws for Naturalization of Foreigners; refusing to pass others to encourage their migrations hither, and raising the conditions of new Appropriations of Lands.<br> 
+		He has obstructed the Administration of Justice, by refusing his Assent to Laws for establishing Judiciary powers.<br> 
+		He has made Judges dependent on his Will alone, for the tenure of their offices, and the amount and payment of their salaries.<br> 
+		He has erected a multitude of New Offices, and sent hither swarms of Officers to harrass our people, and eat out their substance.<br> 
+		He has kept among us, in times of peace, Standing Armies without the Consent of our legislatures.<br> 
+		He has affected to render the Military independent of and superior to the Civil power.<br> 
+		He has combined with others to subject us to a jurisdiction foreign to our constitution, and unacknowledged by our laws; giving his Assent to their Acts of pretended Legislation:<br> 
+		For Quartering large bodies of armed troops among us:<br> 
+		For protecting them, by a mock Trial, from punishment for any Murders which they should commit on the Inhabitants of these States:<br> 
+		For cutting off our Trade with all parts of the world:<br> 
+		For imposing Taxes on us without our Consent: <br> 
+		For depriving us in many cases, of the benefits of Trial by Jury:<br> 
+		For transporting us beyond Seas to be tried for pretended offences<br> 
+		For abolishing the free System of English Laws in a neighbouring Province, establishing therein an Arbitrary government, and enlarging its Boundaries so as to render it at once an example and fit instrument for introducing the same absolute rule into these Colonies:<br> 
+		For taking away our Charters, abolishing our most valuable Laws, and altering fundamentally the Forms of our Governments:<br> 
+		For suspending our own Legislatures, and declaring themselves invested with power to legislate for us in all cases whatsoever.<br> 
+		He has abdicated Government here, by declaring us out of his Protection and waging War against us.<br> 
+		He has plundered our seas, ravaged our Coasts, burnt our towns, and destroyed the lives of our people. <br> 
+		He is at this time transporting large Armies of foreign Mercenaries to compleat the works of death, desolation and tyranny, already begun with circumstances of Cruelty &amp; perfidy scarcely paralleled in the most barbarous ages, and totally unworthy the Head of a civilized nation.<br> 
+		He has constrained our fellow Citizens taken Captive on the high Seas to bear Arms against their Country, to become the executioners of their friends and Brethren, or to fall themselves by their Hands. <br> 
+		He has excited domestic insurrections amongst us, and has endeavoured to bring on the inhabitants of our frontiers, the merciless Indian Savages, whose known rule of warfare, is an undistinguished destruction of all ages, sexes and conditions.</p> 
+</blockquote> 
+<p>In every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Prince whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people.</p> 
+<p>Nor have We been wanting in attentions to our Brittish brethren. We have warned them from time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us. We have reminded them of the circumstances of our emigration and settlement here. We have appealed to their native justice and magnanimity, and we have conjured them by the ties of our common kindred to disavow these usurpations, which, would inevitably interrupt our connections and correspondence. They too have been deaf to the voice of justice and of consanguinity. We must, therefore, acquiesce in the necessity, which denounces our Separation, and hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends.</p> 
+<p>We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.</p> 
+		</div>
+<p><em>The 56 signatures on the Declaration appear in the positions indicated:</em></p>
+		</div>
+	</div>
 
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-        
-        <!--div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-          
-          <ol>          
-            <li>
-              <h2>Use <tt>script/generate</tt> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-            
-            <li>
-              <h2>Set up a default route and remove or rename this file</h2>
-              <p>Routes are set up in config/routes.rb.</p>
-            </li>
+	<div id="articles">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Constitution</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<!--a href="#about" class="button pop">About</a--> 
+		</div>
+<div class="content">
 
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <tt>rake db:migrate</tt> to create your database. If you're not using SQLite (the default), edit <tt>config/database.yml</tt> with your username and password.</p>
-            </li>
-          </ol>
-        </div-->
-      </div>
-      
-      <div id="footer">&nbsp;</div>
+<ul class="rounded">
+<li class="arrow"><a href="#pre" class="pop">Preamble</a></li>
+<li class="arrow"><a href="#a-1" class="pop">I. The Congress</a></li>
+<li class="arrow"><a href="#a-2" class="pop">II. The Executive</a></li>
+<li class="arrow"><a href="#a-3" class="pop">III. The Judiciary</a></li>
+<li class="arrow"><a href="#a-4" class="pop">IV. The States</a></li>
+<li class="arrow"><a href="#a-5" class="pop">V. Amendments</a></li>
+<li class="arrow"><a href="#a-6" class="pop">VI. Debts, Supremacy, Oaths</a></li>
+<li class="arrow"><a href="#a-7" class="pop">VII. Ratification</a></li>
+</ul>
+		</div><!--/end content-->
+	</div><!--/end articles-->
+
+	<div id="pre">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Preamble</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div>
+    	<div class="content">    
+		<p>We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.</p>
+
+
+<div style="text-align:center;">
+
+<iframe title="YouTube video player" class="youtube-player" type="text/html" width="300" height="244" src="http://www.youtube.com/embed/oBuPQgV8yBM" frameborder="0"></iframe>
+
+<!--video id="movie" width="320" height="240" preload controls> <source src="pr6.mp4" />
+	<source src="pr6.webm" type='video/webm; codecs="vp8, vorbis"' />
+    <source src="pr6.ogv" type='video/ogg; codecs="theora, vorbis"' /> 
+    <object width="320" height="240" type="application/x-shockwave-flash" data="flowplayer-3.2.1.swf">
+    <param name="movie" value="flowplayer-3.2.1.swf" />
+    <param name="allowfullscreen" value="true" />
+    <param name="flashvars" value='config={"clip": {"url": "http://wearehugh.com/dih5/good/bbb_480p.mp4", "autoPlay":false, "autoBuffering":true}}' />  <p>Download video as <a href="pr6.mp4">MP4</a>, <a href="pr6.webm">WebM</a>, or <a href="pr6.ogv">Ogg</a>.</p>
+	</object>
+</video--> 
+<script> 
+var v = document.getElementById("movie");
+	v.onclick = function() {
+	if (v.paused) {
+		v.play();
+	} else {
+		v.pause();
+	}
+};
+</script>
+</div>
+    	</div>
+	</div>
+
+	<div id="a-1">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Article I</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div>
+    	<div class="content">
+<h3>The Legislative Branch</h3>
+<h3>Section. 1.</h3>
+<p>
+All legislative Powers herein granted shall be vested in a Congress of the United States, which shall consist of a Senate and House of Representatives.
+</p>
+
+<h3>Section. 2.</h3>
+<p>The House of Representatives shall be composed of Members chosen every second Year by the People of the several States, and the Electors in each State shall have the Qualifications requisite for Electors of the most numerous Branch of the State Legislature.</p>
+
+<p>No Person shall be a Representative who shall not have attained to the Age of twenty five Years, and been seven Years a Citizen of the United States, and who shall not, when elected, be an Inhabitant of that State in which he shall be chosen.</p>
+
+<p><a href="#a11-a20" title="14th amendment" class="pop">Representatives and direct Taxes shall be apportioned among the several States which may be included within this Union, according to their respective Numbers, which shall be determined by adding to the whole Number of free Persons, including those bound to Service for a Term of Years, and excluding Indians not taxed, three fifths of all other Persons</a>. The actual Enumeration shall be made within three Years after the first Meeting of the Congress of the United States, and within every subsequent Term of ten Years, in such Manner as they shall by Law direct. The Number of Representatives shall not exceed one for every thirty Thousand, but each State shall have at Least one Representative; and until such enumeration shall be made, the State of New Hampshire shall be entitled to chuse three, Massachusetts eight, Rhode-Island and Providence Plantations one, Connecticut five, New-York six, New Jersey four, Pennsylvania eight, Delaware one, Maryland six, Virginia ten, North Carolina five, South Carolina five, and Georgia three.</p>
+
+<p>When vacancies happen in the Representation from any State, the Executive Authority thereof shall issue Writs of Election to fill such Vacancies.</p>
+
+<p>The House of Representatives shall chuse their Speaker and other Officers; and shall have the sole Power of Impeachment.</p>
+
+<h3>Section. 3.</h3>
+
+<p>The Senate of the United States shall be composed of two Senators from each State, <a href="#a11-a20" title="17th amendment" class="pop">chosen by the Legislature</a> thereof for six Years; and each Senator shall have one Vote.</p>
+
+<p>Immediately after they shall be assembled in Consequence of the first Election, they shall be divided as equally as may be into three Classes. The Seats of the Senators of the first Class shall be vacated at the Expiration of the second Year, of the second Class at the Expiration of the fourth Year, and of the third Class at the Expiration of the sixth Year, so that one third may be chosen every second Year; <a href="#a11-a20" title="17th amendment" class="pop">and if Vacancies happen by Resignation, or otherwise, during the Recess of the Legislature of any State, the Executive thereof may make temporary Appointments until the next Meeting of the Legislature, which shall then fill such Vacancies</a>.</p>
+
+<p>No Person shall be a Senator who shall not have attained to the Age of thirty Years, and been nine Years a Citizen of the United States, and who shall not, when elected, be an Inhabitant of that State for which he shall be chosen.</p>
+
+<p>The Vice President of the United States shall be President of the Senate, but shall have no Vote, unless they be equally divided.</p>
+
+<p>The Senate shall chuse their other Officers, and also a President pro tempore, in the Absence of the Vice President, or when he shall exercise the Office of President of the United States.</p>
+
+<p>The Senate shall have the sole Power to try all Impeachments. When sitting for that Purpose, they shall be on Oath or Affirmation. When the President of the United States is tried, the Chief Justice shall preside: And no Person shall be convicted without the Concurrence of two thirds of the Members present.</p>
+
+<p>Judgment in Cases of Impeachment shall not extend further than to removal from Office, and disqualification to hold and enjoy any Office of honor, Trust or Profit under the United States: but the Party convicted shall nevertheless be liable and subject to Indictment, Trial, Judgment and Punishment, according to Law.</p>
+
+<h3>Section. 4.</h3>
+
+<p>The Times, Places and Manner of holding Elections for Senators and Representatives, shall be prescribed in each State by the Legislature thereof; but the Congress may at any time by Law make or alter such Regulations, except as to the Places of chusing Senators.</p>
+
+<p>The Congress shall assemble at least once in every Year, and such Meeting shall <a href="#a11-a20" title="20th amendment" class="pop">be on the first Monday in December</a>, unless they shall by Law appoint a different Day.</p>
+
+<strong>Section. 5.</strong>
+
+<p>Each House shall be the Judge of the Elections, Returns and Qualifications of its own Members, and a Majority of each shall constitute a Quorum to do Business; but a smaller Number may adjourn from day to day, and may be authorized to compel the Attendance of absent Members, in such Manner, and under such Penalties as each House may provide.</p>
+
+<p>Each House may determine the Rules of its Proceedings, punish its Members for disorderly Behaviour, and, with the Concurrence of two thirds, expel a Member.</p>
+
+<p>Each House shall keep a Journal of its Proceedings, and from time to time publish the same, excepting such Parts as may in their Judgment require Secrecy; and the Yeas and Nays of the Members of either House on any question shall, at the Desire of one fifth of those Present, be entered on the Journal.</p>
+
+<p>Neither House, during the Session of Congress, shall, without the Consent of the other, adjourn for more than three days, nor to any other Place than that in which the two Houses shall be sitting.</p>
+
+<h3>Section. 6.</h3>
+
+<p>The Senators and Representatives shall receive a Compensation for their Services, to be ascertained by Law, and paid out of the Treasury of the United States. They shall in all Cases, except Treason, Felony and Breach of the Peace, be privileged from Arrest during their Attendance at the Session of their respective Houses, and in going to and returning from the same; and for any Speech or Debate in either House, they shall not be questioned in any other Place.</p>
+
+<p>No Senator or Representative shall, during the Time for which he was elected, be appointed to any civil Office under the Authority of the United States, which shall have been created, or the Emoluments whereof shall have been encreased during such time; and no Person holding any Office under the United States, shall be a Member of either House during his Continuance in Office.</p>
+
+<h3>Section. 7.</h3>
+
+<p>All Bills for raising Revenue shall originate in the House of Representatives; but the Senate may propose or concur with Amendments as on other Bills.</p>
+
+<p>Every Bill which shall have passed the House of Representatives and the Senate, shall, before it become a Law, be presented to the President of the United States: If he approve he shall sign it, but if not he shall return it, with his Objections to that House in which it shall have originated, who shall enter the Objections at large on their Journal, and proceed to reconsider it. If after such Reconsideration two thirds of that House shall agree to pass the Bill, it shall be sent, together with the Objections, to the other House, by which it shall likewise be reconsidered, and if approved by two thirds of that House, it shall become a Law. But in all such Cases the Votes of both Houses shall be determined by yeas and Nays, and the Names of the Persons voting for and against the Bill shall be entered on the Journal of each House respectively. If any Bill shall not be returned by the President within ten Days (Sundays excepted) after it shall have been presented to him, the Same shall be a Law, in like Manner as if he had signed it, unless the Congress by their Adjournment prevent its Return, in which Case it shall not be a Law.</p>
+
+<p>Every Order, Resolution, or Vote to which the Concurrence of the Senate and House of Representatives may be necessary (except on a question of Adjournment) shall be presented to the President of the United States; and before the Same shall take Effect, shall be approved by him, or being disapproved by him, shall be repassed by two thirds of the Senate and House of Representatives, according to the Rules and Limitations prescribed in the Case of a Bill.</p>
+
+<h3>Section. 8.</h3>
+
+<p>The Congress shall have Power To lay and collect Taxes, Duties, Imposts and Excises, to pay the Debts and provide for the common Defence and general Welfare of the United States; but all Duties, Imposts and Excises shall be uniform throughout the United States;</p>
+
+<p>To borrow Money on the credit of the United States;</p>
+
+<p>To regulate Commerce with foreign Nations, and among the several States, and with the Indian Tribes;</p>
+
+<p>To establish an uniform Rule of Naturalization, and uniform Laws on the subject of Bankruptcies throughout the United States;</p>
+
+<p>To coin Money, regulate the Value thereof, and of foreign Coin, and fix the Standard of Weights and Measures;</p>
+
+<p>To provide for the Punishment of counterfeiting the Securities and current Coin of the United States;</p>
+
+<p>To establish Post Offices and post Roads;</p>
+
+<p>To promote the Progress of Science and useful Arts, by securing for limited Times to Authors and Inventors the exclusive Right to their respective Writings and Discoveries;</p>
+
+<p>To constitute Tribunals inferior to the supreme Court;</p>
+
+<p>To define and punish Piracies and Felonies committed on the high Seas, and Offences against the Law of Nations;</p>
+
+<p>To declare War, grant Letters of Marque and Reprisal, and make Rules concerning Captures on Land and Water;</p>
+
+<p>To raise and support Armies, but no Appropriation of Money to that Use shall be for a longer Term than two Years;</p>
+
+<p>To provide and maintain a Navy;</p>
+
+<p>To make Rules for the Government and Regulation of the land and naval Forces;</p>
+
+<p>To provide for calling forth the Militia to execute the Laws of the Union, suppress Insurrections and repel Invasions;</p>
+
+<p>To provide for organizing, arming, and disciplining, the Militia, and for governing such Part of them as may be employed in the Service of the United States, reserving to the States respectively, the Appointment of the Officers, and the Authority of training the Militia according to the discipline prescribed by Congress;</p>
+
+<p>To exercise exclusive Legislation in all Cases whatsoever, over such District (not exceeding ten Miles square) as may, by Cession of particular States, and the Acceptance of Congress, become the Seat of the Government of the United States, and to exercise like Authority over all Places purchased by the Consent of the Legislature of the State in which the Same shall be, for the Erection of Forts, Magazines, Arsenals, dock-Yards, and other needful Buildings;--And</p>
+
+<p>To make all Laws which shall be necessary and proper for carrying into Execution the foregoing Powers, and all other Powers vested by this Constitution in the Government of the United States, or in any Department or Officer thereof.</p>
+
+<h3>Section. 9.</h3>
+
+<p>The Migration or Importation of such Persons as any of the States now existing shall think proper to admit, shall not be prohibited by the Congress prior to the Year one thousand eight hundred and eight, but a Tax or duty may be imposed on such Importation, not exceeding ten dollars for each Person.</p>
+
+<p>The Privilege of the Writ of Habeas Corpus shall not be suspended, unless when in Cases of Rebellion or Invasion the public Safety may require it.</p>
+
+<p>No Bill of Attainder or ex post facto Law shall be passed.</p>
+
+<p>No Capitation, or other direct, Tax shall be laid, <a href="#a11-a20" title="16th amendment" class="pop">unless in Proportion to the Census or enumeration herein before directed to be taken</a>.</p>
+
+<p>No Tax or Duty shall be laid on Articles exported from any State.</p>
+
+<p>No Preference shall be given by any Regulation of Commerce or Revenue to the Ports of one State over those of another; nor shall Vessels bound to, or from, one State, be obliged to enter, clear, or pay Duties in another.</p>
+
+<p>No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law; and a regular Statement and Account of the Receipts and Expenditures of all public Money shall be published from time to time.</p>
+
+<p>No Title of Nobility shall be granted by the United States: And no Person holding any Office of Profit or Trust under them, shall, without the Consent of the Congress, accept of any present, Emolument, Office, or Title, of any kind whatever, from any King, Prince, or foreign State.</p>
+
+<h3>Section. 10.</h3>
+
+<p>No State shall enter into any Treaty, Alliance, or Confederation; grant Letters of Marque and Reprisal; coin Money; emit Bills of Credit; make any Thing but gold and silver Coin a Tender in Payment of Debts; pass any Bill of Attainder, ex post facto Law, or Law impairing the Obligation of Contracts, or grant any Title of Nobility.</p>
+
+<p>No State shall, without the Consent of the Congress, lay any Imposts or Duties on Imports or Exports, except what may be absolutely necessary for executing it's inspection Laws: and the net Produce of all Duties and Imposts, laid by any State on Imports or Exports, shall be for the Use of the Treasury of the United States; and all such Laws shall be subject to the Revision and Controul of the Congress.</p>
+
+<p>No State shall, without the Consent of Congress, lay any Duty of Tonnage, keep Troops, or Ships of War in time of Peace, enter into any Agreement or Compact with another State, or with a foreign Power, or engage in War, unless actually invaded, or in such imminent Danger as will not admit of delay.</p>
+    	</div>
+	</div>
+   
+ 	<div id="a-2">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Article II</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div>
+    	<div class="content">    
+<h3>The Executive Branch</h3>
+
+<h3>Section. 1.</h3>
+
+<p>The executive Power shall be vested in a President of the United States of America. He shall hold his Office during the Term of four Years, and, together with the Vice President, chosen for the same Term, be elected, as follows:</p>
+
+<p>Each State shall appoint, in such Manner as the Legislature thereof may direct, a Number of Electors, equal to the whole Number of Senators and Representatives to which the State may be entitled in the Congress: but no Senator or Representative, or Person holding an Office of Trust or Profit under the United States, shall be appointed an Elector.</p>
+
+<p><a href="#a11-a20" title="12th amendment" class="pop">The Electors shall meet in their respective States, and vote by Ballot for two Persons, of whom one at least shall not be an Inhabitant of the same State with themselves. And they shall make a List of all the Persons voted for, and of the Number of Votes for each; which List they shall sign and certify, and transmit sealed to the Seat of the Government of the United States, directed to the President of the Senate. The President of the Senate shall, in the Presence of the Senate and House of Representatives, open all the Certificates, and the Votes shall then be counted. The Person having the greatest Number of Votes shall be the President, if such Number be a Majority of the whole Number of Electors appointed; and if there be more than one who have such Majority, and have an equal Number of Votes, then the House of Representatives shall immediately chuse by Ballot one of them for President; and if no Person have a Majority, then from the five highest on the List the said House shall in like Manner chuse the President. But in chusing the President, the Votes shall be taken by States, the Representation from each State having one Vote; A quorum for this purpose shall consist of a Member or Members from two thirds of the States, and a Majority of all the States shall be necessary to a Choice. In every Case, after the Choice of the President, the Person having the greatest Number of Votes of the Electors shall be the Vice President. But if there should remain two or more who have equal Votes, the Senate shall chuse from them by Ballot the Vice President</a>.</p>
+
+<p>The Congress may determine the Time of chusing the Electors, and the Day on which they shall give their Votes; which Day shall be the same throughout the United States.</p>
+
+<p>No Person except a natural born Citizen, or a Citizen of the United States, at the time of the Adoption of this Constitution, shall be eligible to the Office of President; neither shall any Person be eligible to that Office who shall not have attained to the Age of thirty five Years, and been fourteen Years a Resident within the United States.</p>
+
+<p><a href="#a21-a27" title="25th amemdment" class="pop">In Case of the Removal of the President from Office, or of his Death, Resignation, or Inability to discharge the Powers and Duties of the said Office, the Same shall devolve on the Vice President, and the Congress may by Law provide for the Case of Removal, Death, Resignation or Inability, both of the President and Vice President, declaring what Officer shall then act as President, and such Officer shall act accordingly, until the Disability be removed, or a President shall be elected</a>.</p>
+
+<p>The President shall, at stated Times, receive for his Services, a Compensation, which shall neither be increased nor diminished during the Period for which he shall have been elected, and he shall not receive within that Period any other Emolument from the United States, or any of them.</p>
+
+<p>Before he enter on the Execution of his Office, he shall take the following Oath or Affirmation:--&quot;I do solemnly swear (or affirm) that I will faithfully execute the Office of President of the United States, and will to the best of my Ability, preserve, protect and defend the Constitution of the United States.&quot;</p>
+
+<h3>Section. 2.</h3>
+
+<p>The President shall be Commander in Chief of the Army and Navy of the United States, and of the Militia of the several States, when called into the actual Service of the United States; he may require the Opinion, in writing, of the principal Officer in each of the executive Departments, upon any Subject relating to the Duties of their respective Offices, and he shall have Power to grant Reprieves and Pardons for Offences against the United States, except in Cases of Impeachment.</p>
+
+<p>He shall have Power, by and with the Advice and Consent of the Senate, to make Treaties, provided two thirds of the Senators present concur; and he shall nominate, and by and with the Advice and Consent of the Senate, shall appoint Ambassadors, other public Ministers and Consuls, Judges of the supreme Court, and all other Officers of the United States, whose Appointments are not herein otherwise provided for, and which shall be established by Law: but the Congress may by Law vest the Appointment of such inferior Officers, as they think proper, in the President alone, in the Courts of Law, or in the Heads of Departments.</p>
+
+<p>The President shall have Power to fill up all Vacancies that may happen during the Recess of the Senate, by granting Commissions which shall expire at the End of their next Session.</p>
+
+<h3>Section. 3.</h3>
+
+<p>He shall from time to time give to the Congress Information of the State of the Union, and recommend to their Consideration such Measures as he shall judge necessary and expedient; he may, on extraordinary Occasions, convene both Houses, or either of them, and in Case of Disagreement between them, with Respect to the Time of Adjournment, he may adjourn them to such Time as he shall think proper; he shall receive Ambassadors and other public Ministers; he shall take Care that the Laws be faithfully executed, and shall Commission all the Officers of the United States.</p>
+
+<h3>Section. 4.</h3>
+
+<p>The President, Vice President and all civil Officers of the United States, shall be removed from Office on Impeachment for, and Conviction of, Treason, Bribery, or other high Crimes and Misdemeanors.</p>
+    	</div>
+	</div>
+   
+ 	<div id="a-3">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Article III</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div>
+    	<div class="content">    
+<h3>The Judicial Branch</h3>
+<h3><a name="3.1"></a>Section. 1.</h3>
+
+<p><a name="3.1.1"></a>The judicial Power of the United States shall be vested in one supreme Court, and in such inferior Courts as the Congress may from time to time ordain and establish. The Judges, both of the supreme and inferior Courts, shall hold their Offices during good Behaviour, and shall, at stated Times, receive for their Services a Compensation, which shall not be diminished during their Continuance in Office.</p>
+
+<h3><a name="3.2"></a>Section. 2.</h3>
+
+<p>The judicial Power shall extend to all Cases, in Law and Equity, arising under this Constitution, the Laws of the United States, and Treaties made, or which shall be made, under their Authority;--to all Cases affecting Ambassadors, other public Ministers and Consuls;--to all Cases of admiralty and maritime Jurisdiction;--to Controversies to which the United States shall be a Party;--to Controversies between two or more States;-- <a href="#a11-a20" title="11th amendment" class="pop">between a State and Citizens of another State</a>,--between Citizens of different States,--between Citizens of the same State claiming Lands under Grants of different States, and between a State, or the Citizens thereof, and foreign States, Citizens or Subjects.</p>
+
+<p>In all Cases affecting Ambassadors, other public Ministers and Consuls, and those in which a State shall be Party, the supreme Court shall have original Jurisdiction. In all the other Cases before mentioned, the supreme Court shall have appellate Jurisdiction, both as to Law and Fact, with such Exceptions, and under such Regulations as the Congress shall make.</p>
+
+<p>The Trial of all Crimes, except in Cases of Impeachment, shall be by Jury; and such Trial shall be held in the State where the said Crimes shall have been committed; but when not committed within any State, the Trial shall be at such Place or Places as the Congress may by Law have directed.</p>
+
+<h3>Section. 3.</h3>
+
+<p>Treason against the United States, shall consist only in levying War against them, or in adhering to their Enemies, giving them Aid and Comfort. No Person shall be convicted of Treason unless on the Testimony of two Witnesses to the same overt Act, or on Confession in open Court.</p>
+
+<p>The Congress shall have Power to declare the Punishment of Treason, but no Attainder of Treason shall work Corruption of Blood, or Forfeiture except during the Life of the Person attainted.</p>
+    	</div>
+	</div>
+    
+ 	<div id="a-4">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Article IV</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div>
+    	<div class="content">    
+<h3>The States</h3>
+
+<h3>Section. 1.</h3>
+
+<p>Full Faith and Credit shall be given in each State to the public Acts, Records, and judicial Proceedings of every other State. And the Congress may by general Laws prescribe the Manner in which such Acts, Records and Proceedings shall be proved, and the Effect thereof.</p>
+
+<h3>Section. 2.</h3>
+
+<p>The Citizens of each State shall be entitled to all Privileges and Immunities of Citizens in the several States.</p>
+
+<p>A Person charged in any State with Treason, Felony, or other Crime, who shall flee from Justice, and be found in another State, shall on Demand of the executive Authority of the State from which he fled, be delivered up, to be removed to the State having Jurisdiction of the Crime.</p>
+
+<p><a href="#a11-a20" title="13th amendment" class="pop">No Person held to Service or Labour in one State, under the Laws thereof, escaping into another, shall, in Consequence of any Law or Regulation therein, be discharged from such Service or Labour, but shall be delivered up on Claim of the Party to whom such Service or Labour may be due</a>.</p>
+
+<h3>Section. 3.</h3>
+
+<p>New States may be admitted by the Congress into this Union; but no new State shall be formed or erected within the Jurisdiction of any other State; nor any State be formed by the Junction of two or more States, or Parts of States, without the Consent of the Legislatures of the States concerned as well as of the Congress.</p>
+
+<p>The Congress shall have Power to dispose of and make all needful Rules and Regulations respecting the Territory or other Property belonging to the United States; and nothing in this Constitution shall be so construed as to Prejudice any Claims of the United States, or of any particular State.</p>
+
+<h3>Section. 4.</h3>
+
+<p>The United States shall guarantee to every State in this Union a Republican Form of Government, and shall protect each of them against Invasion; and on Application of the Legislature, or of the Executive (when the Legislature cannot be convened), against domestic Violence.</p>
+
+    	</div>
+	</div>
+    
+ 	<div id="a-5">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Article V</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div>
+    	<div class="content">    
+<h3>Amendments</h3>
+
+<p>The Congress, whenever two thirds of both Houses shall deem it necessary, shall propose Amendments to this Constitution, or, on the Application of the Legislatures of two thirds of the several States, shall call a Convention for proposing Amendments, which, in either Case, shall be valid to all Intents and Purposes, as Part of this Constitution, when ratified by the Legislatures of three fourths of the several States, or by Conventions in three fourths thereof, as the one or the other Mode of Ratification may be proposed by the Congress; Provided that no Amendment which may be made prior to the Year One thousand eight hundred and eight shall in any Manner affect the first and fourth Clauses in the Ninth Section of the first Article; and that no State, without its Consent, shall be deprived of its equal Suffrage in the Senate.</p>
+
+    	</div>
+	</div>
+    
+ 	<div id="a-6">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Article VI</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div>
+    	<div class="content">    
+<h3>Debts, Supremacy, Oaths</h3>
+
+<p>All Debts contracted and Engagements entered into, before the Adoption of this Constitution, shall be as valid against the United States under this Constitution, as under the Confederation.</p>
+
+<p>This Constitution, and the Laws of the United States which shall be made in Pursuance thereof; and all Treaties made, or which shall be made, under the Authority of the United States, shall be the supreme Law of the Land; and the Judges in every State shall be bound thereby, any Thing in the Constitution or Laws of any State to the Contrary notwithstanding.</p>
+
+<p>The Senators and Representatives before mentioned, and the Members of the several State Legislatures, and all executive and judicial Officers, both of the United States and of the several States, shall be bound by Oath or Affirmation, to support this Constitution; but no religious Test shall ever be required as a Qualification to any Office or public Trust under the United States.</p>
+
+	   	</div>
+	</div>
+    
+ 	<div id="a-7">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Article VII</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div>
+    	<div class="content">    
+<h3>Ratification</h3>
+
+<p>The Ratification of the Conventions of nine States, shall be sufficient for the Establishment of this Constitution between the States so ratifying the Same.</p>
+
+<p>The Word, &quot;the,&quot; being interlined between the seventh and eighth Lines of the first Page, the Word &quot;Thirty&quot; being partly written on an Erazure in the fifteenth Line of the first Page, The Words &quot;is tried&quot; being interlined between the thirty second and thirty third Lines of the first Page and the Word &quot;the&quot; being interlined between the forty third and forty fourth Lines of the second Page. </p>
+
+<p>Attest William Jackson Secretary</p>
+
+<p>done in Convention by the Unanimous Consent of the States present the Seventeenth Day of September in the Year of our Lord one thousand seven hundred and Eighty seven and of the Independance of the United States of America the Twelfth In witness whereof We have hereunto subscribed our Names,</p>
+    	</div>
+	</div>
+ 
+ 	<div id="rights">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Amendments</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<!--a href="#about" class="button pop">About</a--> 
+		</div> 
+		<div class="content">
+<ul class="rounded">
+<li class="arrow"><a href="#bofrpre" class="pop">Preamble</a></li>
+<li class="arrow"><a href="#a1-a10" class="pop">Bill of Rights 1-10</a></li>
+<li class="arrow"><a href="#a11-a20" class="pop">Amendments 11-20</a></li>
+<li class="arrow"><a href="#a21-a27" class="pop">Amendments 20-27</a></li>
+</ul>
+		</div>
     </div>
-  </body>
+   
+ 	<div id="bofrpre">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Preamble</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div> 
+		<div class="content">
+<h3>The Preamble to The Bill of Rights</h3> 
+<p><strong>Congress of the United States</strong><br /> 
+  begun and held at the City of New-York, on<br /> 
+  Wednesday the fourth of March, one thousand seven hundred and eighty nine.</p> 
+<p><strong>THE</strong> Conventions of a number of the States, having at the time of their   adopting the Constitution, expressed a desire, in order to prevent   misconstruction or abuse of its powers, that further declaratory and restrictive clauses should be added: And as extending the ground of public confidence in the Government, will best ensure the beneficent ends of its institution.</p> 
+<p><strong>RESOLVED</strong> by the Senate and House of Representatives of the United   States of America, in Congress assembled, two thirds of both Houses concurring, that the following Articles be proposed to the Legislatures of the several States, as amendments to the Constitution of the United States, all, or any of which Articles, when ratified by three fourths of the said Legislatures, to be valid to all intents and purposes, as part of the said Constitution; viz.</p> 
+<p><strong>ARTICLES</strong> in addition to, and Amendment of the Constitution of the   United States of America, proposed by Congress, and ratified by the Legislatures   of the several States, pursuant to the fifth Article of the original Constitution.</p> 
+             
+		</div>
+    </div>
+    
+ 	<div id="a1-a10">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>Bill of Rights</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div> 
+		<div class="content">
+<p class="note-top">The following text is a transcription of the first ten amendments to the Constitution in their original form. These amendments were ratified December 15, 1791, and form what is known as the &quot;Bill of Rights.&quot;</p> 
+
+<h3>Amendment I</h3> 
+<p>Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.</p> 
+ 
+<h3>Amendment II</h3> 
+<p>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</p> 
+ 
+<h3>Amendment III</h3> 
+<p>No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.</p> 
+ 
+<h3>Amendment IV</h3> 
+<p>The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.</p> 
+
+<h3>Amendment V</h3> 
+<p>No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.</p> 
+ 
+<h3>Amendment VI</h3> 
+<p>In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence.</p> 
+ 
+<h3>Amendment VII</h3> 
+<p>In Suits at common law, where the value in controversy shall exceed twenty 
+dollars, the right of trial by jury shall be preserved, and no fact tried by 
+a jury, shall be otherwise re-examined in any Court of the United States, than 
+according to the rules of the common law.</p> 
+ 
+<h3>Amendment VIII</h3> 
+<p>Excessive bail shall not be required, nor excessive fines imposed, nor cruel and unusual punishments inflicted.</p> 
+ 
+<h3>Amendment IX</h3> 
+<p>The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people.</p> 
+ 
+<h3>Amendment X</h3> 
+<p>The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States respectively, or to the people.</p> 
+            
+		</div>
+    </div>
+ 
+ 	<div id="a11-a20">
+		<div class="toolbar"> 
+			<h1>11-20</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div> 
+		<div class="content">
+<h3>Amendment XI</h3>
+<p><i>Passed by Congress March 4, 1794. Ratified February 7, 1795.</i></p> 
+<p class="note">Article III, section 2, of the Constitution was modified by amendment 11.</p> 
+<p>The Judicial power of the United States shall not be construed to extend to any suit in law or equity, commenced or prosecuted against one of the United States by Citizens of another State, or by Citizens or Subjects of any Foreign State.</p> 
+
+<h3>Amendment XII</h3>
+<p><i>Passed by Congress December 9, 1803. Ratified June 15, 1804.</i></p> 
+<p class="note">A portion of Article II, section 1 of the Constitution was superseded by the 12th amendment.</p> 
+<p>The Electors shall meet in their respective states and vote by ballot for President and Vice-President, one of whom, at least, shall not be an inhabitant of the same state with themselves; they shall name in their ballots the person voted for as President, and in distinct ballots the person voted for as Vice-President, and they shall make distinct lists of all persons voted for as President, and of all persons voted for as Vice-President, and of the number of votes for each, which lists they shall sign and certify, and transmit sealed to the seat of the government of the United States, directed to the President of the Senate; -- the President of the Senate shall, in the presence of the Senate and House of Representatives, open all the certificates and the votes shall then be counted; -- The person having the greatest number of votes for President, shall be the President, if such number be a majority of the whole number of Electors appointed; and if no person have such majority, then from the persons having the highest numbers not exceeding three on the list of those voted for as President, the House of Representatives shall choose immediately, by ballot, the President. But in choosing the President, the votes shall be taken by states, the representation from each state having one vote; a quorum for this purpose shall consist of a member or members from two-thirds of the states, and a majority of all the states shall be necessary to a choice. [And if the House of Representatives shall not choose a President whenever the right of choice shall devolve upon them, before the fourth day of March next following, then the Vice-President shall act as President, as in case of the death or other constitutional disability of the President. --]* The person having the greatest number of votes as Vice-President, shall be the Vice-President, if such number be a majority of the whole number of Electors appointed, and if no person have a majority, then from the two highest numbers on the list, the Senate shall choose the Vice-President; a quorum for the purpose shall consist of two-thirds of the whole number of Senators, and a majority of the whole number shall be necessary to a choice. But no person constitutionally ineligible to the office of President shall be eligible to that of Vice-President of the United States.</p> 
+<p>*<i>Superseded by section 3 of the 20th amendment.</i></p> 
+
+<h3>Amendment XIII</h3>
+<p><i>Passed by Congress January 31, 1865. Ratified December 6, 1865.</i></p> 
+<p class="note">A portion of Article IV, section 2, of the Constitution was superseded by the 13th amendment.</p>
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+Neither slavery nor involuntary servitude, except as a punishment for crime whereof the party shall have been duly convicted, shall exist within the United States, or any place subject to their jurisdiction.</p> 
+<p><strong>Section 2.</strong><br> 
+Congress shall have power to enforce this article by appropriate legislation.</p> 
+</blockquote> 
+
+<h3>Amendment XIV</h3> 
+<p><i>Passed by Congress June 13, 1866. Ratified July 9, 1868.</i></p> 
+<p class="note">Article I, section 2, of the Constitution was modified by section 2 of the 14th amendment.</p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+All persons born or naturalized in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside. No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws.</p> 
+<p><strong>Section 2.</strong><br> 
+Representatives shall be apportioned among the several States according to their respective numbers, counting the whole number of persons in each State, excluding Indians not taxed. But when the right to vote at any election for the choice of electors for President and Vice-President of the United States, Representatives in Congress, the Executive and Judicial officers of a State, or the members of the Legislature thereof, is denied to any of the male inhabitants of such State, being twenty-one years of age,* and citizens of the United States, or in any way abridged, except for participation in rebellion, or other crime, the basis of representation therein shall be reduced in the proportion which the number of such male citizens shall bear to the whole number of male citizens twenty-one years of age in such State.</p> 
+<p><strong>Section 3.</strong><br> 
+No person shall be a Senator or Representative in Congress, or elector of President and Vice-President, or hold any office, civil or military, under the United States, or under any State, who, having previously taken an oath, as a member of Congress, or as an officer of the United States, or as a member of any State legislature, or as an executive or judicial officer of any State, to support the Constitution of the United States, shall have engaged in insurrection or rebellion against the same, or given aid or comfort to the enemies thereof. But Congress may by a vote of two-thirds of each House, remove such disability.</p 
+><strong>Section 4.</strong><br> 
+The validity of the public debt of the United States, authorized by law, including debts incurred for payment of pensions and bounties for services in suppressing insurrection or rebellion, shall not be questioned. But neither the United States nor any State shall assume or pay any debt or obligation incurred in aid of insurrection or rebellion against the United States, or any claim for the loss or emancipation of any slave; but all such debts, obligations and claims shall be held illegal and void.</p> 
+<p><strong>Section 5.</strong><br> 
+The Congress shall have the power to enforce, by appropriate legislation, the provisions of this article.</p> 
+</blockquote> 
+<p>*<i>Changed by section 1 of the 26th amendment.</i></p> 
+
+<h3>Amendment XV</h3> 
+<p><i>Passed by Congress February 26, 1869. Ratified February 3, 1870.</i></p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br>
+The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of race, color, or previous condition of servitude--</p> 
+<p><strong>Section 2.</strong><br> 
+The Congress shall have the power to enforce this article by appropriate legislation.</p> 
+</blockquote> 
+
+<h3>Amendment XVI</h3> 
+<p><i>Passed by Congress July 2, 1909. Ratified February 3, 1913.</i></p> 
+<p class="note">Article I, section 9, of the Constitution was modified by amendment 16.</p> 
+<p>The Congress shall have power to lay and collect taxes on incomes, from whatever source derived, without apportionment among the several States, and without regard to any census or enumeration.</p> 
+
+<h3>Amendment XVII</h3> 
+<p><i>Passed by Congress May 13, 1912. Ratified April 8, 1913.</i></p> 
+<p class="note">Article I, section 3, of the Constitution was modified by the 17th amendment.</p> 
+<p>The Senate of the United States shall be composed of two Senators from each State, elected by the people thereof, for six years; and each Senator shall have one vote. The electors in each State shall have the qualifications requisite for electors of the most numerous branch of the State legislatures.</p> 
+<p>When vacancies happen in the representation of any State in the Senate, the executive authority of such State shall issue writs of election to fill such vacancies: <i>Provided</i>, That the legislature of any State may empower the executive thereof to make temporary appointments until the people fill the vacancies by election as the legislature may direct.</p> 
+<p>This amendment shall not be so construed as to affect the election or term of any Senator chosen before it becomes valid as part of the Constitution.</p> 
+
+<h3>Amendment XVIII</h3>
+<p><i>Passed by Congress December 18, 1917. Ratified January 16, 1919. Repealed by amendment 21.</i></p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+After one year from the ratification of this article the manufacture, sale, or transportation of intoxicating liquors within, the importation thereof into, or the exportation thereof from the United States and all territory subject to the jurisdiction thereof for beverage purposes is hereby prohibited.</p> 
+<p><strong>Section 2.</strong><br> 
+The Congress and the several States shall have concurrent power to enforce this article by appropriate legislation.</p> 
+<p><strong>Section 3.</strong><br> 
+This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by the legislatures of the several States, as provided in the Constitution, within seven years from the date of the submission hereof to the States by the Congress.</p></blockquote>
+
+<h3>Amendment XIX</h3> 
+<p><i><a href="http://www.archives.gov/exhibits/charters/constitution_amendment_19.html" target="_blank" class="pop">Passed by Congress June 4, 1919. Ratified August 18, 1920.</a></i></p> 
+<p>The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of sex.</p> 
+<p>Congress shall have power to enforce this article by appropriate legislation.</p> 
+
+<h3>Amendment XX</h3> 
+<p><i>Passed by Congress March 2, 1932. Ratified January 23, 1933.</i></p> 
+<p class="note">Article I, section 4, of the Constitution was modified by section 2 of this amendment. In addition, a portion of the 12th amendment was superseded by section 3.</p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+The terms of the President and the Vice President shall end at noon on the 20th day of January, and the terms of Senators and Representatives at noon on the 3d day of January, of the years in which such terms would have ended if this article had not been ratified; and the terms of their successors shall then begin.</p> 
+<p><strong>Section 2.</strong><br> 
+The Congress shall assemble at least once in every year, and such meeting shall begin at noon on the 3d day of January, unless they shall by law appoint a different day.</p> 
+<p><strong>Section 3.</strong><br> 
+If, at the time fixed for the beginning of the term of the President, the President elect shall have died, the Vice President elect shall become President. If a President shall not have been chosen before the time fixed for the beginning of his term, or if the President elect shall have failed to qualify, then the Vice President elect shall act as President until a President shall have qualified; and the Congress may by law provide for the case wherein neither a President elect nor a Vice President shall have qualified, declaring who shall then act as President, or the manner in which one who is to act shall be selected, and such person shall act accordingly until a President or Vice President shall have qualified.</p> 
+<p><strong>Section 4.</strong><br> 
+The Congress may by law provide for the case of the death of any of the persons from whom the House of Representatives may choose a President whenever the right of choice shall have devolved upon them, and for the case of the death of any of the persons from whom the Senate may choose a Vice President whenever the right of choice shall have devolved upon them.</p><p><strong>Section 5.</strong><br> 
+Sections 1 and 2 shall take effect on the 15th day of October following the ratification of this article.</p> 
+<p><strong>Section 6.</strong><br> 
+This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by the legislatures of three-fourths of the several States within seven years from the date of its submission.</p> 
+</blockquote> 
+
+		</div>
+    </div>
+ 
+ 	<div id="a21-a27">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>21-27</h1> 
+  		  	<a href="#" class="back">Back</a>
+			<a href="#home" class="button flip">Home</a> 
+		</div> 
+		<div class="content">
+<h3>Amendment XXI</h3> 
+<p><i>Passed by Congress February 20, 1933. Ratified December 5, 1933.</i></p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+The eighteenth article of amendment to the Constitution of the United States is hereby repealed.</p> 
+<p><strong>Section 2.</strong><br> 
+The transportation or importation into any State, Territory, or Possession of the United States for delivery or use therein of intoxicating liquors, in violation of the laws thereof, is hereby prohibited.</p> 
+<p><strong>Section 3.</strong><br> 
+This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by conventions in the several States, as provided in the Constitution, within seven years from the date of the submission hereof to the States by the Congress.</p>
+</blockquote> 
+
+<h3>Amendment XXII</h3>
+<p><i>Passed by Congress March 21, 1947. Ratified February 27, 1951.</i></p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+No person shall be elected to the office of the President more than twice, and no person who has held the office of President, or acted as President, for more than two years of a term to which some other person was elected President shall be elected to the office of President more than once. But this Article shall not apply to any person holding the office of President when this Article was proposed by Congress, and shall not prevent any person who may be holding the office of President, or acting as President, during the term within which this Article becomes operative from holding the office of President or acting as President during the remainder of such term.</p> 
+<p><strong>Section 2.</strong><br> 
+This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by the legislatures of three-fourths of the several States within seven years from the date of its submission to the States by the Congress.</p> 
+</blockquote> 
+
+<h3>Amendment XXIII</h3> 
+<p><i>Passed by Congress June 16, 1960. Ratified March 29, 1961.</i></p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+The District constituting the seat of Government of the United States shall appoint in such manner as Congress may direct:</p> 
+<p>A number of electors of President and Vice President equal to the whole number of Senators and Representatives in Congress to which the District would be entitled if it were a State, but in no event more than the least populous State; they shall be in addition to those appointed by the States, but they shall be considered, for the purposes of the election of President and Vice President, to be electors appointed by a State; and they shall meet in the District and perform such duties as provided by the twelfth article of amendment.</p> 
+<p><strong>Section 2.</strong><br> 
+The Congress shall have power to enforce this article by appropriate legislation.</p> 
+</blockquote> 
+
+<h3>Amendment XXIV</h3> 
+<p><i>Passed by Congress August 27, 1962. Ratified January 23, 1964.</i></p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+The right of citizens of the United States to vote in any primary or other election for President or Vice President, for electors for President or Vice President, or for Senator or Representative in Congress, shall not be denied or abridged by the United States or any State by reason of failure to pay poll tax or other tax.</p> 
+<p><strong>Section 2.</strong><br> 
+The Congress shall have power to enforce this article by appropriate legislation.</p> 
+</blockquote> 
+
+<h3>Amendment XXV</h3> 
+<p><i>Passed by Congress July 6, 1965. Ratified February 10, 1967.</i></p> 
+<p class="note">Article II, section 1, of the Constitution was affected by the 25th amendment.</p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+In case of the removal of the President from office or of his death or resignation, the Vice President shall become President.</p> 
+<p><strong>Section 2.</strong><br> 
+Whenever there is a vacancy in the office of the Vice President, the President shall nominate a Vice President who shall take office upon confirmation by a majority vote of both Houses of Congress.</p> 
+<p><strong>Section 3.</strong><br> 
+Whenever the President transmits to the President pro tempore of the Senate and the Speaker of the House of Representatives his written declaration that he is unable to discharge the powers and duties of his office, and until he transmits to them a written declaration to the contrary, such powers and duties shall be discharged by the Vice President as Acting President.</p> 
+<p><strong>Section 4.</strong><br> 
+Whenever the Vice President and a majority of either the principal officers of the executive departments or of such other body as Congress may by law provide, transmit to the President pro tempore of the Senate and the Speaker of the House of Representatives their written declaration that the President is unable to discharge the powers and duties of his office, the Vice President shall immediately assume the powers and duties of the office as Acting President.</p> 
+<p>Thereafter, when the President transmits to the President pro tempore of the Senate and the Speaker of the House of Representatives his written declaration that no inability exists, he shall resume the powers and duties of his office unless the Vice President and a majority of either the principal officers of the executive department or of such other body as Congress may by law provide, transmit within four days to the President pro tempore of the Senate and the Speaker of the House of Representatives their written declaration that the President is unable to discharge the powers and duties of his office. Thereupon Congress shall decide the issue, assembling within forty-eight hours for that purpose if not in session. If the Congress, within twenty-one days after receipt of the latter written declaration, or, if Congress is not in session, within twenty-one days after Congress is required to assemble, determines by two-thirds vote of both Houses that the President is unable to discharge the powers and duties of his office, the Vice President shall continue to discharge the same as Acting President; otherwise, the President shall resume the powers and duties of his office.</p> 
+</blockquote> 
+
+<h3>Amendment XXVI</h3> 
+<p><i>Passed by Congress March 23, 1971. Ratified July 1, 1971.</i></p> 
+<p class="note">Amendment 14, section 2, of the Constitution was modified by section 1 of the 26th amendment.</p> 
+<blockquote> 
+<p><strong>Section 1.</strong><br> 
+The right of citizens of the United States, who are eighteen years of age or older, to vote shall not be denied or abridged by the United States or by any State on account of age.</p> 
+<p><strong>Section 2.</strong><br> 
+The Congress shall have power to enforce this article by appropriate legislation.</p> 
+</blockquote> 
+
+<h3>Amendment XXVII</h3> 
+<p><i>Originally proposed <a href="http://www.archives.gov/exhibits/charters/constitution_amendment_27.html" target="_blank">Sept. 
+25, 1789</a>. Ratified May 7, 1992.</i> </p> 
+<p>No law, varying the compensation for the services of the Senators and Representatives, shall take effect, until an election of representatives shall have intervened.</p>
+
+			</div>
+		</div>
+    </div>
+
+  
+	<div id="about"> 
+     <div class="content" style="text-align:center;">
+		<!--a href="#settings" class="button slideup">Settings</a-->
+		<h1>We</h1>
+        <p><strong>United States Constitution</strong><br />Version 1.0 beta</p> 
+		<p>Adapted from the <br />
+        <a href="http://www.archives.gov/exhibits/charters/constitution.html" target="_blank">U.S. Archives</a></p> 
+        <p>The text is a transcription of the Constitution in its original form.</p>
+		<p>By <a href="http://www.marcshifflett.com" target="_blank">Marc Shifflett</a><br />
+        Follow me <a href="http://twitter.com/mashcode" target="_blank">on Twitter</a>
+        </p>
+        <p><a href="#" class="grayButton goback">Close</a></p>
+        </div>
+	</div> 
+
+	<div id="settings">
+ 		<div class="toolbar">
+        <h1>Settings</h1>
+    	</div>
+    	<p>These are the settings</p>
+        <p><a href="#" class="grayButton goback">Close</a></p>
+	</div>
+
+	<div id="we">
+		<div class="toolbar"> 
+			<!--a href="#settings" class="button slideup">Settings</a-->
+			<h1>We</h1> 
+  		  	<a href="#" class="back">Back</a>
+		</div> 
+	</div>
+
+  <script type="text/javascript">
+
+    // Call onDeviceReady when PhoneGap is loaded.
+    //
+    // At this point, the document has loaded but phonegap.js has not.
+    // When PhoneGap is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    // 
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+    //
+    function onDeviceReady() {
+		var myContact = navigator.service.contacts.create({"displayName": "Test User"});
+		myContact.gender = "male";
+        console.log("The contact, " + myContact.displayName + ", is of the " + myContact.gender + " gender");
+        // Now safe to use the PhoneGap API
+	
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+ 	}
+
+	function onDeviceReady() {
+        var element = document.getElementById('deviceProperties');
+
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+    }
+
+	 // process the confirmation dialog result
+    //function onConfirm(button) {
+   //     alert('Adios ' + button);
+    //}
+
+    // Show a custom confirmation dialog
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'Thanks for contacting us!',  // message
+            //onConfirm,              // callback to invoke with index of button pressed
+            '',            // title
+            'Message Sent'          // buttonLabels
+        );
+	}
+	
+	function onSuccess(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
+                            'Longitude: ' + position.coords.longitude + '<br />' +
+                            'Altitude: ' + position.coords.altitude + '<br />' +
+                            'Accuracy: ' + position.coords.accuracy + '<br />' +
+                            'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '<br />' +
+                            'Heading: ' + position.coords.heading + '<br />' +
+                            'Speed: ' + position.coords.speed + '<br />' +
+                            'Timestamp: ' + new Date(position.timestamp) + '<br />';
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+
+	function get_location() { 
+		if (Modernizr.geolocation) { 
+		navigator.geolocation.getCurrentPosition(show_map); } 
+		else { 
+		// no native support; maybe try Gears? 
+		} 
+	}
+
+ </script>
+  <!-- end concatenated and minified scripts-->
+  
+  
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+  <![endif]-->
+
+  <!-- yui profiler and profileviewer - remove for production -->
+  <!--script src="js/profiling/yahoo-profiling.min.js"></script>
+  <script src="js/profiling/config.js"></script-->
+  <!-- end profiling code -->
+
+  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
+       change the UA-XXXXX-X to be your site's ID -->
+  <script>
+   var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+
+</body>
 </html>
