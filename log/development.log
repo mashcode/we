@@ -73,3 +73,11 @@ Rendering rescues/layout (not_found)
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-29 16:47:53) [GET]
+
+ActionController::RoutingError (No route matches "/phonegap.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
