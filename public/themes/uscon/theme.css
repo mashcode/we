@@ -20,7 +20,8 @@ h1, h2 {
     border-bottom: 1px solid #2d3642;
     padding: 10px;
     height: 42px;
-    background: url(img/toolbar.png) #6d84a2 repeat-x;
+    /*background: url(img/toolbar.png) #6d84a2 repeat-x;*/
+    background: #e1d5bb url(img/vellum-bg.png) repeat-x;
     position: relative;
 }
 
@@ -39,11 +40,12 @@ h1, h2 {
     font-size: 18px;
     width: 150px;
     font-weight: bold;
-    text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: #fff;
+	letter-spacing: 1px;
+    color: rgb(68, 68, 68);
+    text-shadow: rgba(255, 255, 255, 0.5) 0px -1px 0;
 }
 
 body.landscape .toolbar > h1 {
@@ -65,17 +67,21 @@ body.landscape .toolbar > h1 {
     font-family: inherit;
     font-size: 12px;
     font-weight: bold;
-    color: #fff;
+    color: #fff	;
     text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0;
     text-overflow: ellipsis;
     text-decoration: none;
     white-space: nowrap;
     background: none;
-    -webkit-border-image: url(img/toolButton.png) 0 5 0 5;
+    -webkit-border-image: url(img/toolButton-1.png) 0 5 0 5;
 }
 
 .button.active, .back.active, .cancel.active, .add.active {
-    -webkit-border-image: url(img/toolButton.png) 0 5 0 5;	
+    -webkit-border-image: url(img/toolButton-1.png) 0 5 0 5;	
+}
+
+.back.active {
+    -webkit-border-image: url(img/backButton-2.png) 0 8 0 14;	
 }
 
 .blueButton {
@@ -89,7 +95,7 @@ body.landscape .toolbar > h1 {
     padding: 0;
     max-width: 55px;
     border-width: 0 8px 0 14px;
-    -webkit-border-image: url(img/backButton.png) 0 8 0 14;
+    -webkit-border-image: url(img/backButton-2.png) 0 8 0 14;
 }
 
 .leftButton, .cancel {

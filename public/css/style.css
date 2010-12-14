@@ -174,8 +174,8 @@ input:invalid, textarea:invalid {
 ::-moz-selection { background: #FF5E99; color:#fff; text-shadow: none; }
 ::selection { background:#FF5E99; color:#fff; text-shadow: none; } 
 
-/*  j.mp/webkit-tap-highlight-color */
-a:link { -webkit-tap-highlight-color: #FF5E99; } 
+/*  j.mp/webkit-tap-highlight-color 
+a:link { -webkit-tap-highlight-color: #FF5E99; } */
 
 /* make buttons play nice in IE:    
    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */

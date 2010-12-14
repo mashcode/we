@@ -81,3 +81,67 @@ ActionController::RoutingError (No route matches "/phonegap.js" with {:method=>:
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-13 17:25:51) [GET]
+
+ActionController::RoutingError (No route matches "/we" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-13 17:26:11) [GET]
+
+ActionController::RoutingError (No route matches "/we" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-13 18:33:08) [GET]
+
+ActionController::RoutingError (No route matches "/img/toolButton.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-13 18:33:41) [GET]
+
+ActionController::RoutingError (No route matches "/img/toolButton.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-13 18:33:44) [GET]
+
+ActionController::RoutingError (No route matches "/img/toolButton.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-13 20:44:04) [GET]
+
+ActionController::RoutingError (No route matches "/themes/uscon/img/homeButton-1.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-13 20:44:14) [GET]
+
+ActionController::RoutingError (No route matches "/themes/uscon/img/homeButton-1.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-13 20:44:46) [GET]
+
+ActionController::RoutingError (No route matches "/themes/uscon/img/homeButton-1.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
