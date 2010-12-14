@@ -227,15 +227,16 @@ body {
 
 body > div { min-height: 480px !important; text-align: left; }
 .container { width: ; height: ; }
-.content { background: #fff; color: #111; font-family: Courier; margin: 0px; padding: 10px 5px 10px 10px; min-height: 400px; }
+.content { min-height: 180px; background: #fff; color: #111; font-family: Courier; margin: 10px 5px 0; padding: 10px 5px 10px 10px; border: 1px solid #444; -webkit-border-radius: 8px; }
 .content p { margin: 0px 0 10px; padding: 0px; }
 .content blockquote { margin: 10px; padding: 0px; }
 .content h3 { font-size: 15px; margin-bottom: 3px; }
+.menu { background: #444; margin:0; }
 /*.section p { margin: 5px 0 10px; padding: 0px; }*/
 /*.section { border-bottom: px dotted #444; margin-bottom: 10px; padding-top: 7px; }*/
 
-.content p.note { background-color: #2D3642; color: #fff; font-size: 12px; line-height: 16px; margin: 5px 0 15px -10px; padding: 5px 5px 5px 10px; -moz-border-radius-bottomright: 50px; border-bottom-right-radius: 50px; -webkit-border-bottom-right-radius:50px; }
-.content p.note-top { background-color: #2D3642; color: #fff; font-size: 12px; line-height: 16px; margin: -10px 0 15px -10px; padding: 5px 5px 5px 10px; -moz-border-radius-bottomright: 50px; border-bottom-right-radius: 50px; -webkit-border-bottom-right-radius:50px; }
+.content p.note { background-color: #444; color: #fff; font-size: 12px; line-height: 16px; margin: 5px 0 15px -10px; padding: 5px 5px 5px 10px; -moz-border-radius-bottomright: 50px; border-bottom-right-radius: 50px; -webkit-border-bottom-right-radius:50px; }
+.content p.note-top { background-color: #444; color: #fff; font-size: 12px; line-height: 16px; margin: -5px 0 10px -10px; padding: 5px 5px 5px 10px; -moz-border-radius-bottomright: 50px; border-bottom-right-radius: 50px; -webkit-border-bottom-right-radius:50px; }
 
 .inline { display:inline-block;}
 
