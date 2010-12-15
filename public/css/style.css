@@ -227,7 +227,7 @@ body {
 
 body > div { min-height: 480px !important; text-align: left; }
 .container { width: ; height: ; }
-.content { min-height: 180px; background: #fff; color: #111; font-family: Courier; margin: 10px 5px 0; padding: 10px 5px 10px 10px; border: 1px solid #444; -webkit-border-radius: 8px; }
+.content { min-height: 180px; background: #fff; color: #111; font-family: Courier; margin: 10px 5px 0; padding: 10px 5px 10px 10px; border: 1px solid #444; -webkit-border-radius: 8px; -moz-border-radius: 8px; }
 .content p { margin: 0px 0 10px; padding: 0px; }
 .content blockquote { margin: 10px; padding: 0px; }
 .content h3 { font-size: 15px; margin-bottom: 3px; }
